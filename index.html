@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omni Food</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="image/logo-white.png" />
+    <link href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Commissioner&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .homeLogo {
+            margin-top: 0;
+
+        }
+
+        .homeHeader {
+            background-color: rgba(0, 0, 0, 0.738);
+            background:
+                /* top, transparent black, faked with gradient */
+                linear-gradient(rgba(0, 0, 0, 0.473),
+                    rgba(0, 0, 0, 0.781)),
+                /* bottom, image */
+                url("image/hero.jpg");
+            height: 600px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .headerUl,
+        .FooterUl,
+        .OpacityMenu {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .OpacityMenu {
+            justify-content: space-between;
+            padding-top: 60px;
+            padding-bottom: 20px;
+        }
+
+        li {
+            margin: 10px;
+            margin-right: 100px;
+        }
+
+        .max-width {
+            max-width: 1330px;
+            margin: 0 auto;
+        }
+
+        .HeaderTextH1 {
+            color: white;
+        }
+
+        .homeHeaderBtn {
+            padding-top: 20px;
+        }
+
+        .headerUl li {
+            display: inline-block;
+        }
+
+
+        button {
+            font-size: 15px;
+            padding: 8px;
+            margin: 5px;
+            color: orange;
+            background-color: rgba(255, 166, 0, 0);
+            border-radius: 20px;
+            border: solid 1px;
+        }
+
+        .homeHeaderDown {
+            margin-top: 100px;
+            margin-left: 11.5%;
+        }
+
+        .homeLinkA:hover {
+            box-shadow: 0 3px yellow;
+            color: orange;
+        }
+
+        .headerBtn:hover {
+            color: white;
+            background-color: orange;
+        }
+
+        .homeInfor {
+            margin-top: 30px;
+        }
+
+        .homeInforDown {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 10%;
+            padding-bottom: 5%;
+        }
+
+        .homeInforUp,
+        .homeDownloadUp,
+        .homeLocationUp,
+        .homePriceUp,
+        .homeFBUp {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+
+        .categoryInfor {
+            margin: 30px;
+            width: 20%;
+        }
+
+        .InforTitle {
+            margin: 10px 0;
+            color: orange;
+            font-weight: bold;
+        }
+
+        .fal {
+            max-width: 80px;
+            color: orange;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .InforUpLine,
+        .downloadrUpLine,
+        .locationUpLine,
+        .priceUpLine,
+        .fbUpLine {
+            color: orange;
+            font-weight: bold;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        /*Home Banner*/
+        .homeBanner {
+            position: relative;
+            background-color: rgb(237, 237, 237);
+            overflow: hidden;
+        }
+
+        .bannerImg {
+            width: 25%;
+            height: 275px;
+            overflow: hidden;
+            float: left;
+            margin: 0;
+        }
+
+        .bannerImg img {
+            width: 100%;
+            height: 275px;
+            z-index: 1;
+            filter: brightness(0.5);
+            overflow: hidden;
+            -webkit-transition: all 2s ease;
+            -moz-transition: all 2s ease;
+            -ms-transition: all 2s ease;
+            transition: all 2s ease;
+        }
+
+
+
+        /*Location*/
+        .homeLocation {
+            margin: 50px;
+        }
+
+        .homeLocationDown {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            margin: 50px auto;
+        }
+
+        .location {
+            width: 25%;
+            margin: 0 20px;
+        }
+
+        .imgLocation {
+            width: 100%;
+            margin: 0;
+        }
+
+        .locationA {
+            color: orange;
+            text-decoration: underline;
+        }
+
+        .location ul li {
+            display: flex;
+        }
+
+        .location ul li p {
+            font-weight: 600;
+            padding-left: 5px;
+            margin-top: 2.5px;
+        }
+
+        .locationLogo {
+            min-height: 10px;
+            height: 20px;
+        }
+
+        /*Feedback*/
+
+        .homeFeedback {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px;
+        }
+
+        #h2TY {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 30px;
+            color: orange;
+            font-weight: 1000px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .feedback-form {
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 50%;
+            margin: 0;
+            font-size: 35px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+
+        /* form user info  */
+
+        form {
+            width: 100%;
+            padding: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        form .label-area {
+            width: 100%;
+            margin: 0 20px;
+            color: orange;
+            font-weight: bold;
+        }
+
+        form .label-area p {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 40px;
+        }
+
+        form .input-area {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            color: orange;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .input-area input {
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+        .input-area select {
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+        .input-area .check-box {
+            display: flex;
+        }
+
+        .input-area .check-box p {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 30px;
+            margin-left: 10px;
+            display: block;
+            text-align: start
+        }
+
+        .input-area button {
+            width: 120px;
+            height: 40px;
+            margin-top: 20px;
+            background-color: orange;
+            color: white;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .input-area button:hover {
+            color: orange;
+            background-color: white;
+            border: solid 1px orange;
+        }
+
+        .fbLeft {
+            margin-top: 120px;
+        }
+
+        /*Footer*/
+        .homeFooter {
+            background-color: rgb(60, 60, 60);
+            color: rgb(239, 239, 239);
+        }
+
+        .footerDec {
+            padding: 50px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .footerSocial {
+            padding: 30px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .fab {
+            font-size: 30px;
+            margin: 0 20px;
+        }
+
+        .FooterUl li {
+            margin: 10px;
+        }
+
+        /* Customer Feedback */
+        .homeCustomer {
+            background-color: rgba(0, 0, 0, 0.738);
+            background:
+                /* top, transparent black, faked with gradient */
+                linear-gradient(rgba(0, 0, 0, 0.751),
+                    rgba(0, 0, 0, 0.751)),
+                /* bottom, image */
+                url("image/back-customers.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 30px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .homeCustomerDown {
+            display: flex;
+            justify-content: center;
+            margin: 50px 10%;
+        }
+
+        .cfb p {
+            color: white;
+            font-style: italic;
+        }
+
+        .cfb {
+            margin: 30px;
+            width: 40%;
+        }
+
+        .customer {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .customer img {
+            width: 10%;
+            vertical-align: middle;
+            -webkit-border-radius: 50%;
+        }
+
+        .customer p {
+            margin-left: 10px;
+            padding-top: 5px;
+        }
+
+        /* nav */
+        .nav-link {
+            width: 100px;
+        }
+
+        .navSearch button{
+            background-color: orange;
+            width: 50px;
+        }
+
+        .navSearch input{
+            width:250px;
+            border-radius: 20px;
+            padding-left: 10px;
+            border: solid 2px orange;
+        }
+
+        .navSearch button img{
+            height: 10px;
+        }
+
+        #homeHeaderLogo {
+            max-width: 10%;
+            margin-left: 10px;
+            margin-top: -5px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <div class="homeLogo" style="height: 35px;">
+                <a href="file:///C:/Users/Admin/Downloads/khang/khang/index.html"><img id="homeHeaderLogo"
+                        src="image/logo-white.png" alt="Ảnh Logo" /></a>
+            </div>
+            
+
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item" style="margin-left: 650px">
+                        <a class="nav-link" href="file:///C:/Users/Admin/Downloads/khang/khang/my%20food.html">MY
+                            FOOD</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 50px">
+                        <a class="nav-link" href="file:///C:/Users/Admin/Downloads/khang/khang/my%20food.html">SIGN UP</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="navSearch" style="display: flex;">
+                <input type="text" placeholder="Search">
+                <button><img src="https://th.bing.com/th/id/R.34f3f3420bb165594ebd7a83dc769905?rik=IblMZKG7qdPC2g&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_588.png&ehk=AtPYPfnEvR%2fGMFfZ2RTWlKqLtTjS7CNEJmA3y8QMjyU%3d&risl=&pid=ImgRaw&r=0" alt=""></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="homeMenu">
+        <!-- Header -->
+        <nav class="homeHeader">
+            <div class="OpacityMenu">
+            </div>
+
+            <div class="homeHeaderDown">
+                <div class="homeHeaderText">
+                    <h1 class="HeaderTextH1">GOODBYE JUNK FOOD.</h1>
+                    <h1 class="HeaderTextH1">HELLO SUPER HEALTHY MEALS.</h1>
+                </div>
+
+                <div class="homeHeaderBtn">
+                    <button class="headerBtn">I'm hungry</button>
+                    <button class="headerBtn">Show me more</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Infomation -->
+        <div class="homeInfor">
+            <div class="homeInforUp">
+                <h1 class="InforUpTitle">GET FOOD FAST - NOT FAST FOOD</h1>
+                <p class="InforUpLine">__________</p>
+                <div class="InforUpDec">
+                    <p>
+                        Hello, we're Omnifood, your new premium food delivery service. We
+                        know you're always busy.
+                    </p>
+                    <p>
+                        No time for cooking. So let us take care of that, we're really
+                        good at it, we promise!
+                    </p>
+                </div>
+            </div>
+
+            <div class="homeInforDown">
+                <div class="categoryInfor">
+                    <i class="fal fa-infinity"></i>
+                    <p class="InforTitle">UP TO 365 DAYS/YEAR</p>
+                    <p>
+                        Never cook again! We really mean that. Our subscription plans
+                        include up to 365 days/year coverage.<span id="dots">...</span><span id="more"> You can also choose to order
+                        more flexibly if that's your style.</span></p>
+<button onclick="myFunction()" id="myBtn">Read more</button>
+                    </p>
+                </div>
+                <div class="categoryInfor">
+                    <i class="fal fa-alarm-clock"></i>
+                    <p class="InforTitle">READY IN 20 MINUTES</p>
+                    <p>
+                        You're only twenty minutes away from your delicious and super
+                        healthy meals delivered right to your home.<span id="dots">...</span><span id="more"> We work with the best
+                        chefs in each town to ensure that you're 100% happy.
+                        <button onclick="myFunction()" id="myBtn">Read more</button>
+                    </p>
+                </div>
+                <div class="categoryInfor">
+                    <i class="fal fa-carrot"></i>
+                    <p class="InforTitle">100% ORGANIC</p>
+                    <p>
+                        All our vegetables are fresh, organic and local. Animals are
+                        raised without added hormones or antibiotics.<span id="dots">...</span><span id="more"> Good for your
+                        health, the environment, and it also tastes better!
+                        <button onclick="myFunction()" id="myBtn">Read more</button>
+                    </p>
+                </div>
+                <div class="categoryInfor">
+                    <i class="fal fa-shopping-cart"></i>
+                    <p class="InforTitle">ORDER ANYTHING</p>
+                    <p>
+                        We don't limit your creativity, which means you can order whatever
+                        you feel like.<span id="dots">...</span><span id="more"> You can also choose from our menu containing over
+                        100 delicious meals. It's up to you!
+                        <button onclick="myFunction()" id="myBtn">Read more</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner -->
+        <div class="homeBanner">
+            <div class="bannerImg"><img src="image/1.jpg" alt="" /></div>
+            <div class="bannerImg"><img src="image/2.jpg" alt="" /></div>
+            <div class="bannerImg"><img src="image/3.jpg" alt="" /></div>
+            <div class="bannerImg"><img src="image/4.jpg" alt="" /></div>
+            <div class="bannerImg"><img src="image/5.jpg" alt="" /></div>
+            <div class="bannerImg"><img src="image/6.jpg" alt="" /></div>
+            <div class="bannerImg"><img src="image/7.jpg" alt="" /></div>
+            <div class="bannerImg"><img src="image/8.jpg" alt="" /></div>
+        </div>
+
+        <!-- Location -->
+        <div class="homeLocation">
+            <div class="homeLocationUp">
+                <h1 class="locationUpTitle">WE'RE CURRENTLY IN THESE CITIES</h1>
+                <p class="locationUpLine">__________</p>
+            </div>
+
+            <div class="homeLocationDown">
+                <div class="location">
+                    <img class="imgLocation" src="image/lisbon-3.jpg" alt="" />
+                    <p>LISBON</p>
+                    <ul>
+                        <li>
+                            <img class="locationLogo" src="image/icons8-user-50.png" alt="" />
+                            <p>1600+ happy eaters</p>
+                        </li>
+                        <li>
+                            <img class="locationLogo" src="image/icons8-star-30.png" alt="" />
+                            <p>60+ top chefs</p>
+                        </li>
+                        <li>
+                            <img class="locationLogo" src="image/icons8-twitter-30.png" alt="" />
+                            <a class="locationA" href="">
+                                <p>@omnifood_lx</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="location">
+                    <img class="imgLocation" src="image/san-francisco.jpg" alt="" />
+                    <p>SAN FRANCISCO</p>
+                    <ul>
+                        <li>
+                            <img class="locationLogo" src="image/icons8-user-50.png" alt="" />
+                            <p>3700+ happy eaters</p>
+                        </li>
+                        <li>
+                            <img class="locationLogo" src="image/icons8-star-30.png" alt="" />
+                            <p>160+ top chefs</p>
+                        </li>
+                        <li>
+                            <img class="locationLogo" src="image/icons8-twitter-30.png" alt="" />
+                            <a class="locationA" href="">
+                                <p>@omnifood_sf</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="location">
+                    <img class="imgLocation" src="image/berlin.jpg" alt="" />
+                    <p>BERLIN</p>
+                    <ul>
+                        <li>
+                            <img class="locationLogo" src="image/icons8-user-50.png" alt="" />
+                            <p>2300+ happy eaters</p>
+                        </li>
+                        <li>
+                            <img class="locationLogo" src="image/icons8-star-30.png" alt="" />
+                            <p>110+ top chefs</p>
+                        </li>
+                        <li>
+                            <img class="locationLogo" src="image/icons8-twitter-30.png" alt="" />
+                            <a class="locationA" href="">
+                                <p>@omnifood_berlin</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="location">
+                    <img class="imgLocation" src="image/london.jpg" alt="" />
+                    <p>LONDON</p>
+                    <ul>
+                        <li>
+                            <img class="locationLogo" src="image/icons8-user-50.png" alt="" />
+                            <p>1200+ happy eaters</p>
+                        </li>
+                        <li>
+                            <img class="locationLogo" src="image/icons8-star-30.png" alt="" />
+                            <p>50+ top chefs</p>
+                        </li>
+                        <li>
+                            <img class="locationLogo" src="image/icons8-twitter-30.png" alt="" />
+                            <a class="locationA" href="">
+                                <p>@omnifood_london</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="homeLocationUp" style="margin-top: 100px">
+                <p class="locationUpLine">__________</p>
+            </div>
+        </div>
+
+        <!-- CustomerFB -->
+
+
+        <!-- Feedback -->
+        <div class="homeFeedback">
+            <div class="fbLeft">
+                <a href=""><img src="image/logo.png" alt="" /></a>
+            </div>
+
+            <div class="fbRight">
+                <div class="homeFBUp">
+                    <h1 class="fbUpTitle">WE'RE HAPPY TO HEAR FROM YOU</h1>
+                    <p class="fbUpLine">__________</p>
+                </div>
+
+                <form class="feedback">
+                    <div class="label-area">
+                        <p>Name</p>
+                        <p>Email</p>
+                        <p>How did you find us?</p>
+                        <p>Newsletter?</p>
+                        <p>Drop us a line</p>
+                    </div>
+
+                    <div class="input-area">
+                        <input type="text" placeholder="Name" />
+                        <input type="text" placeholder="Email" />
+                        <select id="how-to-find">
+                            <option value="friends">Friends</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="youtube">Youtube</option>
+                            <option value="news">News</option>
+                        </select>
+                        <div class="check-box">
+                            <input id="check" type="checkbox" />
+                            <p>Yes, please</p>
+                        </div>
+                        <textarea name="" id="" cols="50" rows="5"></textarea>
+
+                        <button id="btnTY" type="button">Send it!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="homeFooter">
+            <div class="footerSocial">
+                <div class="info">
+                    <ul class="FooterUl">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">iOS App</a></li>
+                        <li><a href="#">Android App</a></li>
+                    </ul>
+                </div>
+
+                <div class="icon-contact">
+                    <a href="https://www.facebook.com/profile.php?id=100009238045403"><i
+                            class="fab fa-facebook-square"></i></a>
+
+                    <a href="https://mail.google.com/mail/u/0/#inbox"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footerDec">
+                <p>This website was created for the course "Design and Develop a Killer Website Using HTML5 and CSS3"
+                    by Jonas Schmedtmann and developed by khang. No copyrights here.
+                </p>
+                <p>This webpage is for you! So go and do whatever you want with it and have fun.</p>
+                <p style="margin: 10px;">Build with ❤️ in the beautiful city of Hanoi, Vietnam, July 2022</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
+</body>
+
+</html>
